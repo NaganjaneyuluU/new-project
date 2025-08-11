@@ -1,1 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+.btn-primary {
+    @apply px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600;
+}
+
+.footer-buttons {
+    @apply text-[#BBBEC7BA]
+}
+
+.footer-signuptext {
+    @apply text-[#BBBEC7BA] mb-4
+}
+
+.footer-signupbutton {
+    @apply text-[#BBBEC7] bg-[#3D4051] py-[8px] px-[18px]
+}
+
+.footer-signupbutton:hover {
+    @apply text-[#FFFFFF] bg-[#494D62]
+}
+
+.footer-buttons:hover {
+    @apply text-[#CCCED9]
+}
+
+.alignment-listitem {
+    @apply leading-[2];
+
+}
+
+.footer-bottomtext {
+    @apply text-center text-[#BBBEC7BA] text-[14px] font-light mt-8
+}
+
+.complete-solutiontext {
+    @apply text-[#3333333] text-[32px] font-bold leading-[1.7]
+}
+
+.solutionexplain-paratext {
+    @apply text-[#666666] mb-[12px] text-[17px] leading-[1.7]
+}
+
+.listitem-headingtext {
+    @apply text-[#333333] text-[27px] font-semibold mb-[12px];
+}
+
+.contantus-button {
+    @apply rounded-[6px] py-[10px] px-[26px] bg-[#C01010] text-white hover:bg-[#A60D0D] hover:text-white;
+}
+
+.new-arrivalstext {
+    @apply text-[#333333] text-[32px] font-bold leading-[1.3em] text-center;
+}
+.productlink-name{
+  @apply text-[#333333] font-semibold text-[20px] tracking-normal leading-normal mb-5;
+}
+.establishes-year{
+ @apply text-[#666666] text-[17px];
+}
+.font-semibold{
+      @apply font-bold;
+}
+.alignment-carddetails{
+    @apply flex flex-col items-start
+}
+.card-detailsbutton{
+  @apply text-[#C01010] bg-white border-2 border-[#C01010] py-[9px] px-[27px] rounded-[6px] mt-5
+         leading-[1] hover:bg-[#A60D0D] hover:border-[#A60D0D] hover:text-white transition duration-300;
+}
+
+
+
