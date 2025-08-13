@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { MACHINES } from '../../dataset/cards-data';
+import { MACHINES } from '../../../dataset/cards-data';
 import { CommonModule } from '@angular/common';
 import { Header } from '../header/header';
-import { Footer } from '../footer/footer';
+import { Footer } from '../footer-components/footer/footer';
 
 @Component({
   selector: 'app-index',
