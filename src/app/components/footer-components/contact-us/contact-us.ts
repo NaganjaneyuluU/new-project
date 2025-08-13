@@ -6,7 +6,6 @@ import { FormsModule, NgForm } from '@angular/forms';
   selector: 'app-contact-us',
   imports: [CommonModule,FormsModule],
   templateUrl: './contact-us.html',
-  styleUrl: './contact-us.css'
 })
 export class ContactUs {
   contactMobileNumber: string = "+49 (0) 221 5894016";
