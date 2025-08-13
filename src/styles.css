@@ -1,5 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+@theme {
+  --color-brand-gray:#a3a3a3;  /* Icon Color*/
+  --color-brand-red:#c01010;  
+  --color-brand-white:#f8f8f8;
+  --color-brand-gray-hover: #707070;
+  --color-brand-tabs-hover:#ebebeb;
+}
+
+
+
+.btn-primary {
+  @apply px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600;
+}
+
+.gray-brand {
+  @apply text-brand-gray;
+
+}
+.gray-brand:hover {
+  color: var(--color-brand-gray-hover);
+}
 
 .btn-primary {
     @apply px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600;
@@ -63,12 +84,35 @@
       @apply font-bold;
 }
 .alignment-carddetails{
-    @apply flex flex-col items-start
+    @apply flex flex-col items-start px-[20px] pb-[28px] pt-[0px];
 }
 .card-detailsbutton{
   @apply text-[#C01010] bg-white border-2 border-[#C01010] py-[9px] px-[27px] rounded-[6px] mt-5
          leading-[1] hover:bg-[#A60D0D] hover:border-[#A60D0D] hover:text-white transition duration-300;
 }
-
-
-
+.cardsection-alignment{
+ @apply bg-white shadow-[5px_5px_20px_15px_rgba(224,224,224,0.2)] 
+         transition-[background,border,border-radius,box-shadow] duration-300 
+         rounded-[7px];
+}
+.card-image {
+  @apply h-[280px] object-cover rounded-[7px] align-middle inline-block;
+}
+.alignment-imagetext{
+   @apply  mb-[20px]
+}
+.vewall-machinebutton{
+     @apply font-medium text-white bg-[#C01010] rounded-[6px] py-[14px] px-[26px] 
+         hover:bg-[#A60D0D] hover:text-white transition duration-300;
+}
+.global-partnertext{
+    @apply text-white text-[50px] font-extrabold leading-[1.4em] tracking-normal;
+}
+.filling-industrytext{
+     @apply text-white text-[17px]
+}
+.submit-machinebutton{
+  @apply font-medium text-white bg-[#3E3939] rounded-[6px] py-[14px] px-[26px] 
+         hover:bg-[#605A5A] hover:text-white transition duration-300;
+}
+  

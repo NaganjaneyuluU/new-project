@@ -1,39 +1,82 @@
-<h2 class="new-arrivalstext">New Arrivals</h2>
 
 
+<app-header></app-header>
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
-
-  <!-- Card -->
-  <div class="bg-white rounded-lg shadow">
-    <img src="machine1.webp" alt="Komori Lithrone GL-540+C" class="rounded-t-lg w-full h-48 object-cover">
-    <div class="alignment-carddetails">
-      <a href="" class="productlink-name">
-        Komori Lithrone GL-540+C
-      </a>
-      <p class="establishes-year"><span class="font-semibold">
-          Year:
-        </span>
-        2015
+<div >
+  <div class="bg-[url('/herosection-headermain.webp')] bg-center bg-no-repeat bg-cover">
+    <div class="flex items-center">
+<div>
+      <h2 class="global-partnertext">
+        Your Global Partner for Printing & Packaging Machines
+      </h2>
+      <p class="filling-industrytext mb-8">
+        As PP LION we buy, overhaul, clean and sell used machines from the printing and packaging industry and machinery
+        from the filling industry.
       </p>
-      <p class="establishes-year"><span class="font-semibold">
-          Size:
-        </span>
-        72×103 cm
-      </p>
-      <a href=""
-        class="card-detailsbutton">
-        Details
-    </a>
+      <div class="flex items-center gap-3">
+        <div>
+          <a href="" class="vewall-machinebutton">
+            Our Machines
+          </a>
+        </div>
+        <div>
+          <a href="" class="submit-machinebutton">
+            Submit your Machine
+          </a>
+        </div>
+    
+      </div>
     </div>
+    <div>
+      <img src="/carousel-image.webp" alt="">
+    </div>
+    </div>
+    
   </div>
+ 
+
+
 </div>
 
 
 
 
 
-<div style="display: flex;width: 85%;margin: auto;gap: 2rem;">
+
+
+
+
+<h2 class="new-arrivalstext" style="margin-top: 3rem;">New Arrivals</h2>
+
+<div class="grid grid-cols-3 gap-6" style="width: 85%;margin: auto;margin-top: 3rem;margin-bottom: 3rem;">
+  <div *ngFor="let machine of machines" class="cardsection-alignment">
+    <div class="alignment-imagetext">
+      <a [href]="machine.link">
+        <img [src]="machine.image" [alt]="machine.name" class="card-image">
+      </a>
+    </div>
+    <div class="alignment-carddetails">
+      <a [href]="machine.link" class="productlink-name">{{ machine.name }}</a>
+      <p class="establishes-year"><span class="font-semibold">Year:</span> {{ machine.year }}</p>
+      <p class="establishes-year"><span class="font-semibold">Size:</span> {{ machine.size }}</p>
+      <a [href]="machine.link" class="card-detailsbutton">Details</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="text-center">
+  <a href="" class="vewall-machinebutton">
+    View all Machines
+  </a>
+</div>
+
+
+
+
+
+
+<div style="display: flex;width: 85%;margin: auto;gap: 2rem;margin-top: 6rem;">
   <div style="display: flex;align-items: center;">
     <div style="width:100%">
       <div>
@@ -96,3 +139,5 @@
 
   </div>
 </div>
+
+<app-footer></app-footer>
