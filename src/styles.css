@@ -6,9 +6,10 @@
   --color-brand-white:#f8f8f8;
   --color-brand-gray-hover: #707070;
   --color-brand-tabs-hover:#ebebeb;
+  --color-brand-black:#333333;  
+  --color-brand-inputfield:#ffffff;
+  --color-brand-dark-red:#be1010;
 }
-
-
 
 .btn-primary {
   @apply px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600;

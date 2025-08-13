@@ -1,0 +1,124 @@
+<div class="bg-brand-white py-12">
+    <div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+        <div>
+            <h3 class="text-brand-red font-medium">Need any Consultations?</h3>
+            <h1 class="text-3xl text-brand-black font-semibold mb-6">Get in Touch</h1>
+
+            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="space-y-4">
+
+                <div>
+                    <label class="block  mb-1">Name*</label>
+                    <input type="text" name="name" [(ngModel)]="contactFormData.name" required
+                        placeholder="Enter your Name"
+                        class="w-full placeholder:text-brand-gray shadow bg-brand-inputfield rounded p-3 focus:outline-none" />
+                </div>
+
+                <div>
+                    <label class="block  mb-1">E-Mail*</label>
+                    <input type="email" name="email" [(ngModel)]="contactFormData.email" required
+                        placeholder="Enter your E-Mail"
+                        class="w-full placeholder:text-brand-gray shadow bg-brand-inputfield rounded p-3 focus:outline-none " />
+                </div>
+
+                <div>
+                    <label class="block  mb-1">Phone Number*</label>
+                    <input type="text" name="phone" [(ngModel)]="contactFormData.phone" required
+                        placeholder="Enter your Phone Number"
+                        class="w-full placeholder:text-brand-gray shadow bg-brand-inputfield rounded p-3 focus:outline-none " />
+                </div>
+
+                <div>
+                    <label class="block mb-1">Company*</label>
+                    <input type="text" name="company" [(ngModel)]="contactFormData.company" required
+                        placeholder="Enter your Company"
+                        class="w-full placeholder:text-brand-gray shadow bg-brand-inputfield rounded p-3 focus:outline-none " />
+                </div>
+
+                <div>
+                    <p class="mb-2">Are you a Dealer or Enduser?*</p>
+                    <div class="flex items-center gap-8"><label>
+                            <div class="flex items-center">
+                                <input type="radio" name="userType" value="dealer"
+                                    [(ngModel)]="contactFormData.userType" required />
+                                <p class="pl-2">Dealer</p>
+                            </div>
+                        </label>
+                        <label>
+                            <div class="flex items-center">
+                                <input type="radio" name="userType" value="endUser"
+                                    [(ngModel)]="contactFormData.userType" required />
+                                <p class="pl-2">End User</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block mb-1">Message</label>
+                    <textarea name="message" [(ngModel)]="contactFormData.message" rows="4"
+                        placeholder="What would you like to tell us?"
+                        class="w-full placeholder:text-brand-gray shadow bg-brand-inputfield rounded p-3 focus:outline-none "></textarea>
+                </div>
+
+                <div class="flex items-center">
+                    <input type="checkbox" name="privacy" [(ngModel)]="contactFormData.privacy" required class="mr-2" />
+                    <!-- include privacyPocily navigation -->
+                    <label class="font-medium text-brand-gray-hover">I have taken note of the <a href="#"
+                            class="underline">privacy
+                            policy</a>.</label>
+                </div>
+
+                <button type="submit" [disabled]="!contactForm.valid"
+                    class="bg-red-700 text-white py-2 rounded-lg hover:bg-red-800 transition w-40">
+
+                    <div class="flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                            viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                            <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                        </svg>
+                        <p class="p-1">Submit</p>
+                    </div>
+                </button>
+            </form>
+        </div>
+
+        <div class="space-y-6">
+            <div class="w-full h-64 bg-gray-200 rounded-lg overflow-hidden">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." class="w-full h-full border-0"
+                    loading="lazy"></iframe>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow space-y-4">
+                <a [attr.href]="'tel:' + contactMobileNumber" class="flex items-center gap-1 cursor-pointer group">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        class="size-4 text-brand-red group-hover:text-brand-dark-red">
+                        <path fill-rule="evenodd"
+                            d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <p class="group-hover:text-brand-dark-red p-2">{{contactMobileNumber}}</p>
+                </a>
+                <a [attr.href]="'mailto:' + contactEmailAddress" class="flex items-center gap-1 cursor-pointer group">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        class="size-5 text-brand-red group-hover:text-brand-dark-red">
+                        <path
+                            d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+                        <path
+                            d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
+                    </svg>
+                    <p class="group-hover:text-brand-dark-red p-2">{{contactEmailAddress}}</p>
+                </a>
+                <p class="flex items-start"><span class=" mr-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="currentColor">
+                            <path
+                                d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z" />
+                        </svg></span>
+                    PP LION GmbH<br>
+                    Hugo-Eckener-Str. 29<br>
+                    50829 Köln / Germany
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
