@@ -1,39 +1,39 @@
-
-
 <app-header></app-header>
 
-<div >
+<div>
   <div class="bg-[url('/herosection-headermain.webp')] bg-center bg-no-repeat bg-cover">
     <div class="flex items-center">
-<div>
-      <h2 class="global-partnertext">
-        Your Global Partner for Printing & Packaging Machines
-      </h2>
-      <p class="filling-industrytext mb-8">
-        As PP LION we buy, overhaul, clean and sell used machines from the printing and packaging industry and machinery
-        from the filling industry.
-      </p>
-      <div class="flex items-center gap-3">
-        <div>
-          <a href="" class="vewall-machinebutton">
-            Our Machines
-          </a>
+      <div>
+        <h2 class="global-partnertext">
+          Your Global Partner for Printing & Packaging Machines
+        </h2>
+        <p class="filling-industrytext mb-8">
+          As PP LION we buy, overhaul, clean and sell used machines from the printing and packaging industry and
+          machinery
+          from the filling industry.
+        </p>
+        <div class="flex items-center gap-3">
+          <div>
+            <a href="" class="vewall-machinebutton">
+              Our Machines
+            </a>
+          </div>
+          <div>
+            <a href="" class="submit-machinebutton">
+              Submit your Machine
+            </a>
+          </div>
+
         </div>
-        <div>
-          <a href="" class="submit-machinebutton">
-            Submit your Machine
-          </a>
-        </div>
-    
+      </div>
+      <div style="width: 100%;">
+        <img [src]="carouselImages[currentImage]" alt="Machine Image"
+          class="w-full h-auto object-cover transition-all duration-700" style="padding: 30px 0px;" />
       </div>
     </div>
-    <div>
-      <img src="/carousel-image.webp" alt="">
-    </div>
-    </div>
-    
+
   </div>
- 
+
 
 
 </div>
@@ -141,3 +141,4 @@
 </div>
 
 <app-footer></app-footer>
+

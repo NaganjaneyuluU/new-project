@@ -1,7 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+
 @import "tailwindcss";
 @theme {
-  --color-brand-gray:#a3a3a3;  /* Icon Color*/
+  --color-brand-gray:#a3a3a3; 
   --color-brand-red:#c01010;  
   --color-brand-white:#f8f8f8;
   --color-brand-gray-hover: #707070;

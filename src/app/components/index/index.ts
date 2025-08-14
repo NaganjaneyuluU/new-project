@@ -12,19 +12,25 @@ import { Footer } from '../footer-components/footer/footer';
 })
 export class Index {
 machines = MACHINES;
- carouselImages: string[] = [
-    'assets/images/machine1.jpg',
-    'assets/images/machine2.jpg',
-    'assets/images/machine3.jpg'
+  carouselImages: string[] = [
+    '/carousel-image.webp',
+    '/abfuell-home.webp',
+    '/manroland-home.webp'
   ];
 
-  currentIndex = 0;
-
-  nextImage() {
-    this.currentIndex = (this.currentIndex + 1) % this.carouselImages.length;
+  currentImage = 0;
+  intervalId: any;
+  ngOnInit() {
+    this.intervalId = setInterval(() => {
+      this.nextImage();
+    }, 3000); // Change every 3 seconds
   }
 
-  prevImage() {
-    this.currentIndex = (this.currentIndex - 1 + this.carouselImages.length) % this.carouselImages.length;
+  ngOnDestroy() {
+    clearInterval(this.intervalId);
+  }
+
+  nextImage() {
+    this.currentImage = (this.currentImage + 1) % this.carouselImages.length;
   }
 }
