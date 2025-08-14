@@ -110,7 +110,12 @@
 
             </div>
         </div>
-        <div class="flex w-full -items-center">
+        <div [ngClass]="{'fixed top-0 left-0 right-0 z-50 shadow-md bg-white': isSticky}"
+            class="flex w-full px-15 items-center">
+            <div *ngIf="isSticky" class="flex items-center gap-4 pl-2 w-auto">
+                <img src="pplion-image.jpg" alt="Logo" class="h-10 w-32 hidden sm:block">
+                <img src="pplion-favicon.png" alt="Logo" class="h-10 sm:hidden">
+            </div>
             <nav class="flex gap-6 px-6 py-3">
                 <div *ngFor="let item of menuItems" class="relative group">
                     <button
@@ -191,9 +196,26 @@
                     </ul>
                 </li>
             </ng-template>
+            <div *ngIf="isSticky" class="relative inline-block text-left w-14" (mouseenter)="isOpen = true">
+                <div class="flex items-center justify-center rounded-lg p-2 bg-white cursor-pointer outline-none focus:outline-none"
+                    tabindex="-1">
+                    <img *ngIf="selectedCountry" [src]="getSelectedFlag()" [alt]="selectedCountry" class="w-5 h-4" />
+                </div>
+                <div *ngIf="isOpen"
+                    class="absolute w-full bg-white border border-gray-300 mt-1 rounded-lg shadow-lg z-10">
+                    <div *ngFor="let country of countries"
+                        class="flex justify-center p-2 hover:bg-gray-100 cursor-pointer"
+                        (click)="selectCountry(country.id)">
+                        <img [src]="country.img" [alt]="country.id" class="w-5 h-4" />
+                    </div>
+                </div>
+            </div>
 
-            <!-- <input type="text" placeholder="Search..." class="border gray-brand rounded-4xl px-3 py-2 w-56"> -->
-            <div class="ml-auto">
+            <svg *ngIf="isSticky" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor" class="brand-dark-red">
+                <path
+                    d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+            </svg>
+            <div *ngIf="!isSticky" class="ml-auto">
                 <button class="bg-black text-white m-3 px-4 py-2 rounded hover:bg-gray-800">
                     Submit your Machine
                 </button>
