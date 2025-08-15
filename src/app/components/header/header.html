@@ -78,7 +78,9 @@
                     </svg>
                 </a>
 
-                <div class="relative inline-block text-left w-14" (mouseenter)="isOpen = true">
+                <div class="relative inline-block text-left w-14" (mouseenter)="isOpen = true"
+                    (mouseleave)="isOpen = false">
+
                     <div class="flex items-center justify-center rounded-lg p-2 bg-white cursor-pointer outline-none focus:outline-none"
                         tabindex="-1">
                         <img *ngIf="selectedCountry" [src]="getSelectedFlag()" [alt]="selectedCountry"
@@ -119,8 +121,8 @@
             <nav class="flex gap-6 px-6 py-3">
                 <div *ngFor="let item of menuItems" class="relative group">
                     <button
-                        class="px-3 py-2 rounded transition flex items-center gap-1 hover:bg-brand-tabs-hover font-bold"
-                        [class.bg-gray-200]="activeMenu === item.label" (click)="setActive(item.label)">
+                        class="px-3 py-2 rounded transition flex items-center gap-1 hover:bg-brand-tabs-hover font-semibold text-gray-700"
+                        [class.bg-gray-200]="activeMenu === item.label" (click)="setActive(item.label, item.route)">
                         {{ item.label }}
                         <span *ngIf="item.submenu?.length">
                             <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"
@@ -129,74 +131,48 @@
                             </svg>
                         </span>
                     </button>
-                    <ng-container *ngIf="item.submenu?.length">
-                        <div class="absolute top-full left-0 bg-white shadow-lg rounded-md mt-1 min-w-[220px] z-10
-               opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                            <ng-container *ngFor="let sub of item.submenu">
-                                <div class="relative group/sub px-4 py-2 hover:bg-gray-100 cursor-pointer flex justify-between items-center"
-                                    *ngIf="!isString(sub)">
-                                    {{ sub.label }}
-                                    <span *ngIf="sub.submenu?.length">
+
+                    <div *ngIf="item.submenu?.length" class="absolute top-full left-0 bg-white shadow-lg rounded-md mt-1 min-w-[220px] z-10
+                                opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <div *ngFor="let sub of item.submenu"
+                            class="relative group/sub px-4 py-2 hover:bg-gray-100 cursor-pointer flex justify-between items-center">
+                            {{ sub.label }}
+                            <span *ngIf="sub.submenu?.length">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"
+                                    fill="currentColor">
+                                    <path d="M400-280v-400l200 200-200 200Z" />
+                                </svg>
+                            </span>
+
+                            <div *ngIf="sub.submenu?.length" class="absolute top-0 left-full bg-white shadow-lg rounded-md min-w-[220px] z-20
+                                        opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200">
+                                <div *ngFor="let sub2 of sub.submenu"
+                                    class="relative group/sub2 px-4 py-2 hover:bg-gray-100 cursor-pointer flex justify-between items-center">
+                                    {{ sub2.label }}
+                                    <span *ngIf="sub2.submenu?.length">
                                         <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960"
                                             width="20" fill="currentColor">
                                             <path d="M400-280v-400l200 200-200 200Z" />
                                         </svg>
                                     </span>
-                                    <div *ngIf="sub.submenu?.length"
-                                        class="absolute top-0 left-full bg-white shadow-lg rounded-md min-w-[220px] z-20
-                     opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200">
-                                        <ng-container *ngFor="let sub2 of sub.submenu">
-                                            <div class="relative group/sub2 px-4 py-2 hover:bg-gray-100 cursor-pointer flex justify-between items-center"
-                                                *ngIf="!isString(sub2)">
-                                                {{ sub2.label }}
-                                                <span *ngIf="sub2.submenu?.length">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" height="20"
-                                                        viewBox="0 -960 960 960" width="20" fill="currentColor">
-                                                        <path d="M400-280v-400l200 200-200 200Z" />
-                                                    </svg>
-                                                </span>
-                                                <div *ngIf="sub2.submenu?.length"
-                                                    class="absolute top-0 left-full bg-white shadow-lg rounded-md min-w-[220px] z-30
-                           opacity-0 invisible group-hover/sub2:opacity-100 group-hover/sub2:visible transition-all duration-200">
-                                                    <ng-container *ngFor="let sub3 of sub2.submenu">
-                                                        <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                                                            {{ sub3 }}
-                                                        </div>
-                                                    </ng-container>
-                                                </div>
-                                            </div>
-                                            <div *ngIf="isString(sub2)"
-                                                class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                                                {{ sub2 }}
-                                            </div>
-                                        </ng-container>
+
+                                    <div *ngIf="sub2.submenu?.length" class="absolute top-0 left-full bg-white shadow-lg rounded-md min-w-[220px] z-30
+                                                opacity-0 invisible group-hover/sub2:opacity-100 group-hover/sub2:visible transition-all duration-200">
+                                        <div *ngFor="let sub3 of sub2.submenu"
+                                            class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                                            {{ sub3.label }}
+                                        </div>
                                     </div>
                                 </div>
-                                <div *ngIf="isString(sub)" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                                    {{ sub }}
-                                </div>
-                            </ng-container>
+                            </div>
                         </div>
-                    </ng-container>
+                    </div>
                 </div>
             </nav>
 
-            <ng-template #recursiveMenu let-submenu>
-                <li *ngFor="let sub of submenu" class="relative group">
-                    <a *ngIf="!sub.label" href="#" class="block px-4 py-2 hover:bg-gray-100">
-                        {{ sub }}
-                    </a>
-                    <a *ngIf="sub.label" href="#" class="block px-4 py-2 hover:bg-gray-100">
-                        {{ sub.label }}
-                    </a>
-                    <ul *ngIf="sub.submenu"
-                        class="absolute left-full top-0 hidden group-hover:block bg-white shadow-lg min-w-[200px] z-50">
-                        <ng-container
-                            *ngTemplateOutlet="recursiveMenu; context: { $implicit: sub.submenu }"></ng-container>
-                    </ul>
-                </li>
-            </ng-template>
-            <div *ngIf="isSticky" class="relative inline-block text-left w-14" (mouseenter)="isOpen = true">
+            <div *ngIf="isSticky" class="relative inline-block text-left w-14" (mouseenter)="isOpen = true"
+                (mouseleave)="isOpen = false">
+
                 <div class="flex items-center justify-center rounded-lg p-2 bg-white cursor-pointer outline-none focus:outline-none"
                     tabindex="-1">
                     <img *ngIf="selectedCountry" [src]="getSelectedFlag()" [alt]="selectedCountry" class="w-5 h-4" />
@@ -211,7 +187,8 @@
                 </div>
             </div>
 
-            <svg *ngIf="isSticky" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor" class="brand-dark-red">
+            <svg *ngIf="isSticky" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                fill="currentColor" class="brand-dark-red">
                 <path
                     d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
             </svg>
