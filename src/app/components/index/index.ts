@@ -1,12 +1,12 @@
 import { Component, HostListener } from '@angular/core';
 import { MACHINES } from '../../../dataset/cards-data';
 import { CommonModule } from '@angular/common';
-import { Header } from '../header/header';
 import { Footer } from '../footer-components/footer/footer';
 
 @Component({
   selector: 'app-index',
-  imports: [CommonModule, Header, Footer],
+  standalone:true,
+  imports: [CommonModule, Footer],
   templateUrl: './index.html',
   styleUrl: './index.css'
 })
@@ -17,13 +17,12 @@ export class Index {
     '/abfuell-home.webp',
     '/manroland-home.webp'
   ];
-  isSticky: boolean = false;
   currentImage = 0;
   intervalId: any;
   ngOnInit() {
     this.intervalId = setInterval(() => {
       this.nextImage();
-    }, 3000); // Change every 3 seconds
+    }, 3000);
   }
 
   ngOnDestroy() {
@@ -32,9 +31,5 @@ export class Index {
 
   nextImage() {
     this.currentImage = (this.currentImage + 1) % this.carouselImages.length;
-  }
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    this.isSticky = window.scrollY > 150;
-  }
+  }  
 }
