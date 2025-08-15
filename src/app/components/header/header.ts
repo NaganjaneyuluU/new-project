@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -13,7 +13,7 @@ export class Header {
   contactEmailAddress: string = "lion@pplion.com";
   selectedCountry: number = 1;
   isOpen: boolean = false;
-
+  @Input() isSticky: boolean = false;
   countries = [
     { id: 1, img: 'Inglese.jpg' },
     { id: 2, img: 'Spagnolo.png' },
