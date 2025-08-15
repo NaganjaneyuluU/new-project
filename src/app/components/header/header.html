@@ -131,11 +131,12 @@
                             </svg>
                         </span>
                     </button>
-
                     <div *ngIf="item.submenu?.length" class="absolute top-full left-0 bg-white shadow-lg rounded-md mt-1 min-w-[220px] z-10
                                 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                        <div *ngFor="let sub of item.submenu"
-                            class="relative group/sub px-4 py-2 hover:bg-gray-100 cursor-pointer flex justify-between items-center">
+
+                        <div *ngFor="let sub of item.submenu; let i = index" class="relative group/sub px-4 py-2 hover:bg-gray-100 cursor-pointer flex justify-between items-center
+                                    border-t border-gray-200" [class.border-t-0]="i === 0">
+
                             {{ sub.label }}
                             <span *ngIf="sub.submenu?.length">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"
@@ -143,11 +144,12 @@
                                     <path d="M400-280v-400l200 200-200 200Z" />
                                 </svg>
                             </span>
-
                             <div *ngIf="sub.submenu?.length" class="absolute top-0 left-full bg-white shadow-lg rounded-md min-w-[220px] z-20
-                                        opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200">
-                                <div *ngFor="let sub2 of sub.submenu"
-                                    class="relative group/sub2 px-4 py-2 hover:bg-gray-100 cursor-pointer flex justify-between items-center">
+                                    opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200">
+
+                                <div *ngFor="let sub2 of sub.submenu; let j = index" class="relative group/sub2 px-4 py-2 hover:bg-gray-100 cursor-pointer flex justify-between items-center
+                                    border-t border-gray-200" [class.border-t-0]="j === 0">
+
                                     {{ sub2.label }}
                                     <span *ngIf="sub2.submenu?.length">
                                         <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960"
@@ -155,11 +157,13 @@
                                             <path d="M400-280v-400l200 200-200 200Z" />
                                         </svg>
                                     </span>
+                                    <div *ngIf="sub2.submenu?.length"
+                                        class="absolute top-0 left-full bg-white shadow-lg rounded-md min-w-[220px] z-30
+                                        opacity-0 invisible group-hover/sub2:opacity-100 group-hover/sub2:visible transition-all duration-200">
 
-                                    <div *ngIf="sub2.submenu?.length" class="absolute top-0 left-full bg-white shadow-lg rounded-md min-w-[220px] z-30
-                                                opacity-0 invisible group-hover/sub2:opacity-100 group-hover/sub2:visible transition-all duration-200">
-                                        <div *ngFor="let sub3 of sub2.submenu"
-                                            class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                                        <div *ngFor="let sub3 of sub2.submenu; let k = index"
+                                            class="px-4 py-2 hover:bg-gray-100 cursor-pointer border-t border-gray-200"
+                                            [class.border-t-0]="k === 0">
                                             {{ sub3.label }}
                                         </div>
                                     </div>

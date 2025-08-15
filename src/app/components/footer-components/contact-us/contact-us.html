@@ -64,8 +64,8 @@
                 <div class="flex items-center">
                     <input type="checkbox" name="privacy" [(ngModel)]="contactFormData.privacy" required class="mr-2" />
                     <!-- include privacyPocily navigation -->
-                    <label class="font-medium text-brand-gray-hover">I have taken note of the <a href="#"
-                            class="underline">privacy
+                    <label class="font-medium text-brand-gray-hover">I have taken note of the <a
+                            href="/footer-components/imprint" class="underline">privacy
                             policy</a>.</label>
                 </div>
 
@@ -82,13 +82,16 @@
             </form>
         </div>
 
-        <div class="space-y-6">
-            <div class="w-full h-64 bg-gray-200 rounded-lg overflow-hidden">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." class="w-full h-full border-0"
-                    loading="lazy"></iframe>
+        <div class="space-y-6 pt-8">
+            <div class="w-full h-96 bg-gray-200 rounded-lg overflow-hidden">
+                <iframe
+                    src="https://maps.google.com/maps?q=PP%20LION%20GmbH%20Hugo-Eckener-Str.%2029%2C%2050829%20K%C3%B6ln&t=m&z=5&output=embed&iwloc=near"
+                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0" class="w-full h-full"
+                    title="PP LION GmbH Location">
+                </iframe>
             </div>
 
-            <div class="bg-white p-6 rounded-lg shadow space-y-4">
+            <div class="bg-white p-6 rounded-lg shadow">
                 <a [attr.href]="'tel:' + contactMobileNumber" class="flex items-center gap-1 cursor-pointer group">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                         class="size-4 text-brand-red group-hover:text-brand-dark-red">
@@ -108,16 +111,18 @@
                     </svg>
                     <p class="group-hover:text-brand-dark-red p-2">{{contactEmailAddress}}</p>
                 </a>
-                <p class="flex items-start"><span class=" mr-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+
+                <a [attr.href]="'https://maps.google.com/maps?q=PP%20LION%20GmbH%20Hugo-Eckener-Str.%2029%2C%2050829%20K%C3%B6ln&t=m&z=5&output=embed&iwloc=near'" class="flex items-center gap-1 cursor-pointer group">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"  class="size-6 text-brand-red group-hover:text-brand-dark-red"
                             fill="currentColor">
                             <path
                                 d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z" />
-                        </svg></span>
+                        </svg>
+                    <p class="group-hover:text-brand-dark-red p-2">
                     PP LION GmbH<br>
                     Hugo-Eckener-Str. 29<br>
-                    50829 Köln / Germany
-                </p>
+                    50829 Köln / Germany</p>
+                </a>                
             </div>
         </div>
     </div>
