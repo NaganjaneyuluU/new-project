@@ -4,6 +4,7 @@ import { Index } from './components/index';
 import { Header } from './components/header/header';
 import { ContactUs } from './components/footer-components/contact-us/contact-us';
 import { Imprint } from './components/footer-components/imprint/imprint';
+import { OurServices } from './our-services/our-services';
 
 
 export const routes: Routes = [
@@ -11,11 +12,6 @@ export const routes: Routes = [
      {path:'index',component:Index},
      {path:'header',component:Header},
      {path:'contactus',component:ContactUs},
-    { 
-    path: 'footer-components',
-    children: [
-      { path: 'footer', component: Footer },
-      { path: 'imprint', component: Imprint }
-    ]
-  },
+     {path:'imprint',component:Imprint},
+     {path:'our-services',component:OurServices}
 ];

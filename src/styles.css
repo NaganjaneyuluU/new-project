@@ -103,7 +103,7 @@
    @apply  mb-[20px]
 }
 .vewall-machinebutton{
-     @apply font-medium text-white bg-[#C01010] rounded-[6px] py-[14px] px-[26px] 
+     @apply font-medium text-white bg-[#C01010] rounded-[6px] py-[10px] px-[26px] 
          hover:bg-[#A60D0D] hover:text-white transition duration-300;
 }
 .global-partnertext{
