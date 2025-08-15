@@ -53,7 +53,7 @@
 }
 
 .footer-bottomtext {
-    @apply text-center text-[#BBBEC7BA] text-[14px] font-light mt-8
+    @apply text-center text-[#BBBEC7BA] text-[14px] font-light mt-5
 }
 
 .complete-solutiontext {
