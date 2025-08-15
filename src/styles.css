@@ -61,7 +61,7 @@
 }
 
 .solutionexplain-paratext {
-    @apply text-[#666666] mb-[12px] text-[17px] leading-[1.7]
+    @apply text-[#666666]  text-[17px] leading-[1.7]
 }
 
 .listitem-headingtext {
