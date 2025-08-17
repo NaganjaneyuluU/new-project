@@ -33,28 +33,20 @@
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-<h2 class="new-arrivalstext" style="margin-top: 3rem;">New Arrivals</h2>
+<h2 class="new-arrivalstext text-center" style="margin-top: 3rem;">New Arrivals</h2>
 
 <div class="grid grid-cols-3 gap-6" style="width: 85%;margin: auto;margin-top: 3rem;margin-bottom: 3rem;">
   <div *ngFor="let machine of machines" class="cardsection-alignment">
     <div class="alignment-imagetext">
-      <a [href]="machine.link">
-        <img [src]="machine.image" [alt]="machine.name" class="card-image">
+      <a href="/machine-details">
+        <img [src]="machine.images[0]" [alt]="machine.name" class="card-image">
       </a>
     </div>
     <div class="alignment-carddetails">
-      <a [href]="machine.link" class="productlink-name">{{ machine.name }}</a>
+      <a href="/machine-details" class="productlink-name">{{ machine.name }}</a>
       <p class="establishes-year"><span class="font-semibold">Year:</span> {{ machine.year }}</p>
-      <p class="establishes-year"><span class="font-semibold">Size:</span> {{ machine.size }}</p>
-      <a [href]="machine.link" class="card-detailsbutton">Details</a>
+      <p class="establishes-year"><span class="font-semibold">Size:</span> {{ machine.maxSize }}</p>
+      <a href="/machine-details" class="card-detailsbutton">Details</a>
     </div>
   </div>
 </div>
