@@ -1,8 +1,8 @@
 import { Component, HostListener } from '@angular/core';
 import { MACHINES } from '../../../dataset/cards-data';
-import { CommonModule } from '@angular/common';
 import { Footer } from '../footer-components/footer/footer';
-
+import { machines } from '../../../dataset/cards-data';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-index',
   standalone:true,
@@ -11,7 +11,7 @@ import { Footer } from '../footer-components/footer/footer';
   styleUrl: './index.css'
 })
 export class Index {
-  machines = MACHINES;
+  machines = machines;
   carouselImages: string[] = [
     '/carousel-image.webp',
     '/abfuell-home.webp',

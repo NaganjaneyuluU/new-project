@@ -193,7 +193,7 @@ export class Header implements OnInit {
         }
       ]
     },
-    { label: 'Our Services', route: '/services' },
+    { label: 'Our Services', route: '/our-services' },
     { label: 'Contact us', route: '/contactus' }
   ];
   activeMenu: string | null = null;
