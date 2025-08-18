@@ -1,0 +1,73 @@
+<div class="w-[85%] m-auto mt-10 mb-10">
+    <h1 class="text-[#333333] text-[40px] font-extrabold leading-[1.4em]">
+        Man Roland 205 OB
+    </h1>
+
+</div>
+
+
+
+<div>
+    <div class="flex w-[85%] m-auto gap-8">
+        <div style="width: 20%;">
+            <div class="mb-3">
+                <h3 class="font-normal text-[20px] text-[#333333]">
+                    Search
+                </h3>
+            </div>
+
+            <div>
+                <input type="text" placeholder="Search in this category..."
+                    class="w-full border border-gray-300 rounded-md px-4 py-2 text-gray-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300" />
+            </div>
+            <div class="border-t border-gray-300 my-6"></div>
+            <div class="mb-3">
+                <h3 class="font-normal text-[20px] text-[#333333]">
+                    Categories
+                </h3>
+                <div class="mt-2">
+                    <label class="block my-2">
+                        <input type="checkbox" class="mr-2">
+                        Corrugator
+                    </label>
+                    <label class="block my-2">
+                        <input type="checkbox" class="mr-2">
+                        Cutoff
+                    </label>
+                    <label class="block my-2">
+                        <input type="checkbox" class="mr-2">
+                        Slitter Scorer
+                    </label>
+                </div>
+            </div>
+            <div class="border-t border-gray-300 my-6"></div>
+            <div class="mb-3">
+                <h3 class="font-normal text-[20px] text-[#333333]">
+                    Manufacturer
+                </h3>
+            </div>
+            <div class="border-t border-gray-300 my-6"></div>
+        </div>
+        <div style="width: 80%;">
+            <div class="grid grid-cols-3 gap-6">
+                <div class="cardsection-alignment" *ngFor="let machine of machines">
+                    <div class="alignment-imagetext">
+                        <a [href]="machine.link">
+                            <img [src]="machine.image" alt="machine image" class="card-image">
+                        </a>
+                    </div>
+                    <div class="alignment-carddetails">
+                        <a [href]="machine.link" class="productlink-name">
+                            {{machine.name}}
+                        </a>
+                        <p class="establishes-year"><span class="font-semibold">Year:</span> {{machine.year}}</p>
+                        <p class="establishes-year"><span class="font-semibold">Size:</span> {{machine.size}}</p>
+                        <a [href]="machine.link" class="card-detailsbutton">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
