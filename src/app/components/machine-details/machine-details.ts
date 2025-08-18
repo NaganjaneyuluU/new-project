@@ -28,10 +28,11 @@ export class MachineDetails implements OnInit {
   selectedImage = this.images[0];
   machines=machines;
   selectedMachine:any;
+  category:any;
+  MachinesOfSelectedCategory:any[]=[];
   constructor(private route: ActivatedRoute) {}
   onSubmit(form: NgForm) {
     if (form.valid) {
-      console.log('Form Data:', this.contactFormData);
       form.resetForm();
     } else {
       // alert('Please fill out all required fields before submitting.');
@@ -55,7 +56,8 @@ export class MachineDetails implements OnInit {
         console.log(this.selectedMachine)
       }
     });
-    
+    this.category=this.selectedMachine.category;
+    this.MachinesOfSelectedCategory = machines.filter(m => m.category === this.category);
     this.updateItemsPerPage();
     this.startAutoSlide();
   }
