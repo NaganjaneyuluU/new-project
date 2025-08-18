@@ -36,7 +36,7 @@
 <h2 class="new-arrivalstext text-center" style="margin-top: 3rem;">New Arrivals</h2>
 
 <div class="grid grid-cols-3 gap-6" style="width: 85%;margin: auto;margin-top: 3rem;margin-bottom: 3rem;">
-  <div *ngFor="let machine of machines" class="cardsection-alignment">
+  <div *ngFor="let machine of randomMachines" class="cardsection-alignment">
     <div class="alignment-imagetext">
       <a href="/machine-details">
         <img [src]="machine.images[0]" [alt]="machine.name" class="card-image">
