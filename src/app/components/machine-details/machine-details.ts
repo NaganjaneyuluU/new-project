@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { machines } from '../../../dataset/cards-data';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-machine-details',
   imports: [CommonModule, FormsModule],
-  templateUrl: './machine-details.html',
+  templateUrl: './machine-details.html'
 })
 export class MachineDetails implements OnInit {
   images: string[] = [
@@ -26,6 +27,8 @@ export class MachineDetails implements OnInit {
   step: number = 1;
   selectedImage = this.images[0];
   machines=machines;
+  selectedMachine:any;
+  constructor(private route: ActivatedRoute) {}
   onSubmit(form: NgForm) {
     if (form.valid) {
       console.log('Form Data:', this.contactFormData);
@@ -45,6 +48,14 @@ export class MachineDetails implements OnInit {
   interval: any;
 
   ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+    const id = params['id'];
+       if (id) {
+        this.selectedMachine = machines.find(m => m.referenceId === id);
+        console.log(this.selectedMachine)
+      }
+    });
+    
     this.updateItemsPerPage();
     this.startAutoSlide();
   }

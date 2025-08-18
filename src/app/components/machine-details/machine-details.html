@@ -1,6 +1,6 @@
 <div class="p-6 bg-brand-white">
   <div class=" flex justify-between mb-4">
-    <h2 class="text-2xl font-bold mb-4">Man Roland 205 OB</h2>
+    <h2 class="text-2xl font-bold mb-4">{{selectedMachine.name}}</h2>
     <div class="flex items-center">
       <a routerLink="/machines/5-colors" class="text-red-600 hover:underline flex items-center cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24"
@@ -27,24 +27,24 @@
 
       <div class="grid grid-cols-2 py-2 text-brand-card-label">
         <span class="font-semibold ">Reference ID</span>
-        <span>PP-50719</span>
+        <span>{{selectedMachine.referenceId}}</span>
       </div>
       <div class="grid grid-cols-2 py-2 text-brand-card-label">
         <span class="font-semibold ">Category</span>
-        <span>5-Colors</span>
+        <span>{{selectedMachine.category}}</span>
       </div>
 
       <div class="grid grid-cols-2 py-2 text-brand-card-label">
         <span class="font-semibold ">Manufacturer</span>
-        <span>Manroland</span>
+        <span>{{selectedMachine.manufacturer}}</span>
       </div>
       <div class="grid grid-cols-2 py-2 text-brand-card-label">
         <span class="font-semibold ">Model</span>
-        <span>205 OB</span>
+        <span>{{selectedMachine.model}}</span>
       </div>
       <div class="grid grid-cols-2 py-2 text-brand-card-label">
         <span class="font-semibold ">Year</span>
-        <span>2007</span>
+        <span>{{selectedMachine.year}}</span>
       </div>
       <div class="grid grid-cols-2 py-2 text-brand-card-label">
         <span class="font-semibold ">Color</span>
@@ -53,23 +53,23 @@
 
       <div class="grid grid-cols-2 py-2 text-brand-card-label">
         <span class="font-semibold ">Impression</span>
-        <span>30</span>
+        <span>{{selectedMachine.impression}}</span>
       </div>
       <div class="grid grid-cols-2 py-2 text-brand-card-label">
         <span class="font-semibold ">Max. Size</span>
-        <span>205 OB</span>
+        <span>{{selectedMachine.maxSize}}</span>
       </div>
       <div class="grid grid-cols-2 py-2 text-brand-card-label">
         <span class="font-semibold ">Condition</span>
-        <span>Good</span>
+        <span>{{selectedMachine.condition}}</span>
       </div>
       <div class="grid grid-cols-2 py-2 text-brand-card-label">
         <span class="font-semibold ">Location</span>
-        <span>Europe</span>
+        <span>{{selectedMachine.location}}</span>
       </div>
       <div class="grid grid-cols-2 py-2 text-brand-card-label">
         <span class="font-semibold ">Availability</span>
-        <span>Immediately</span>
+        <span>{{selectedMachine.availability}}</span>
       </div>
       <div class="flex p-6 items-center justify-between">
         <button class="mt-6 bg-red-700 hover:bg-red-800 text-white px-5 py-2 rounded-lg shadow-md">
