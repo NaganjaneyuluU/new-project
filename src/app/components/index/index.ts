@@ -11,7 +11,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './index.css'
 })
 export class Index {
-  machines = machines;
+  machines =machines;
+  randomMachines: any[] = [];
   carouselImages: string[] = [
     '/carousel-image.webp',
     '/abfuell-home.webp',
@@ -20,6 +21,7 @@ export class Index {
   currentImage = 0;
   intervalId: any;
   ngOnInit() {
+    this.randomMachines = this.getRandomMachines(12);
     this.intervalId = setInterval(() => {
       this.nextImage();
     }, 3000);
@@ -32,4 +34,9 @@ export class Index {
   nextImage() {
     this.currentImage = (this.currentImage + 1) % this.carouselImages.length;
   }  
+  getRandomMachines(count: number) {
+    return this.machines
+      .sort(() => 0.5 - Math.random())
+      .slice(0, count);
+  }
 }
