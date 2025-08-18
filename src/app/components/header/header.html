@@ -113,7 +113,7 @@
             </div>
         </div>
         <div [ngClass]="{'fixed top-0 left-0 right-0 z-50 shadow-md bg-white': isSticky}"
-            class="flex w-full px-10 items-center justify-center">
+            class="flex w-full px-10 items-center justify-center py-2">
             <div *ngIf="isSticky" class="flex items-center gap-4 pl-2 w-auto">
                 <img src="pplion-image.jpg" alt="Logo" class="h-10 w-32 hidden sm:block">
                 <img src="pplion-favicon.png" alt="Logo" class="h-10 sm:hidden">
@@ -132,10 +132,10 @@
                         </span>
                     </button>
                     <div *ngIf="item.submenu?.length" class="absolute top-full left-0 bg-white shadow-lg rounded-md mt-1 min-w-[220px] z-10
-                                opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                                opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 text-[#666666]">
 
                         <div *ngFor="let sub of item.submenu; let i = index" class="relative group/sub px-4 py-2 hover:bg-gray-100 cursor-pointer flex justify-between items-center
-                                    border-t border-gray-200" [class.border-t-0]="i === 0">
+                                    border-t border-gray-200 text-[#666666]" [class.border-t-0]="i === 0">
 
                             {{ sub.label }}
                             <span *ngIf="sub.submenu?.length">
