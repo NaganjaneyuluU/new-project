@@ -1,8 +1,13 @@
 <div class="bg-brand-white py-12">
-    <div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-8">
-
+    <div class="w-[85%] mx-auto mt-3 mb-4">
+        <h1 class="text-[#333333] text-4xl font-extrabold leading-[1.4em]">
+            Contact us
+        </h1>
+    </div>
+    <div class="container mx-auto  grid grid-cols-1 lg:grid-cols-2 gap-16 w-[85%] ">
+        
         <div>
-            <h3 class="text-brand-red font-medium">Need any Consultations?</h3>
+            <h3 class="text-brand-red">Need any Consultations?</h3>
             <h1 class="text-3xl text-brand-black font-semibold mb-6">Get in Touch</h1>
 
             <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="space-y-4">
@@ -80,6 +85,9 @@
                     </div>
                 </button>
             </form>
+            <div class="mt-4 mb-4">
+                If you want to submit your machine, click here.
+            </div>
         </div>
 
         <div class="space-y-6 pt-8">
@@ -112,17 +120,18 @@
                     <p class="group-hover:text-brand-dark-red p-2">{{contactEmailAddress}}</p>
                 </a>
 
-                <a [attr.href]="'https://maps.google.com/maps?q=PP%20LION%20GmbH%20Hugo-Eckener-Str.%2029%2C%2050829%20K%C3%B6ln&t=m&z=5&output=embed&iwloc=near'" class="flex items-center gap-1 cursor-pointer group">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"  class="size-6 text-brand-red group-hover:text-brand-dark-red"
-                            fill="currentColor">
-                            <path
-                                d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z" />
-                        </svg>
+                <a [attr.href]="'https://maps.google.com/maps?q=PP%20LION%20GmbH%20Hugo-Eckener-Str.%2029%2C%2050829%20K%C3%B6ln&t=m&z=5&output=embed&iwloc=near'"
+                    class="flex items-center gap-1 cursor-pointer group">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        class="size-6 text-brand-red group-hover:text-brand-dark-red" fill="currentColor">
+                        <path
+                            d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z" />
+                    </svg>
                     <p class="group-hover:text-brand-dark-red p-2">
-                    PP LION GmbH<br>
-                    Hugo-Eckener-Str. 29<br>
-                    50829 Köln / Germany</p>
-                </a>                
+                        PP LION GmbH<br>
+                        Hugo-Eckener-Str. 29<br>
+                        50829 Köln / Germany</p>
+                </a>
             </div>
         </div>
     </div>
