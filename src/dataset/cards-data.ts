@@ -1083,7 +1083,7 @@ export const machines = [
     condition: "Excellent",
     location: "Germany",
     availability: "Immediate",
-    images: ["/postpress/binder1.webp", "/postpress/binder2.webp"]
+    images: ["/machine-mainimage.webp", "/machine-mainimage2.webp"]
   },
   {
     referenceId: "PB-002",
@@ -1099,7 +1099,7 @@ export const machines = [
     condition: "Very Good",
     location: "Italy",
     availability: "2 Months",
-    images: ["/postpress/binder3.webp", "/postpress/binder4.webp"]
+    images: ["/machine-mainimage.webp", "/machine-mainimage2.webp"]
   },
   {
     referenceId: "GU-001",
@@ -1114,7 +1114,7 @@ export const machines = [
     condition: "Excellent",
     location: "Netherlands",
     availability: "Immediate",
-    images: ["/postpress/guillotine1.webp"]
+    images: ["/machine-mainimage.webp", "/machine-mainimage2.webp"]
   },
   {
     referenceId: "GU-002",
@@ -1129,7 +1129,7 @@ export const machines = [
     condition: "Good",
     location: "France",
     availability: "Immediate",
-    images: ["/postpress/guillotine2.webp"]
+    images: ["/machine-mainimage.webp", "/machine-mainimage2.webp"]
   },
   {
     referenceId: "FD-001",
@@ -1145,7 +1145,7 @@ export const machines = [
     condition: "Excellent",
     location: "Germany",
     availability: "Immediate",
-    images: ["/postpress/folder1.webp"]
+    images: ["/machine-mainimage.webp", "/machine-mainimage2.webp"]
   },
   {
     referenceId: "FD-002",
@@ -1161,7 +1161,7 @@ export const machines = [
     condition: "Very Good",
     location: "Spain",
     availability: "1 Month",
-    images: ["/postpress/folder2.webp"]
+    images: ["/machine-mainimage.webp", "/machine-mainimage2.webp"]
   },
   {
     referenceId: "SS-001",
@@ -1177,7 +1177,7 @@ export const machines = [
     condition: "Good",
     location: "UK",
     availability: "Immediate",
-    images: ["/postpress/saddlestitcher1.webp"]
+    images: ["/machine-mainimage.webp", "/machine-mainimage2.webp"]
   },
   {
     referenceId: "SS-002",
@@ -1193,7 +1193,7 @@ export const machines = [
     condition: "Very Good",
     location: "Belgium",
     availability: "2 Months",
-    images: ["/postpress/saddlestitcher2.webp"]
+    images: ["/machine-mainimage.webp", "/machine-mainimage2.webp"]
   },
   {
     referenceId: "TS-001",
@@ -1208,7 +1208,7 @@ export const machines = [
     condition: "Excellent",
     location: "Germany",
     availability: "Immediate",
-    images: ["/postpress/threadsewing1.webp"]
+    images: ["/machine-mainimage.webp", "/machine-mainimage2.webp"]
   },
   {
     referenceId: "TS-002",
@@ -1223,7 +1223,7 @@ export const machines = [
     condition: "Good",
     location: "Portugal",
     availability: "Immediate",
-    images: ["/postpress/threadsewing2.webp"]
+   images: ["/machine-mainimage.webp", "/machine-mainimage2.webp"]
   },
   {
     referenceId: "CM-001",
@@ -1238,7 +1238,7 @@ export const machines = [
     condition: "Very Good",
     location: "Poland",
     availability: "2 Months",
-    images: ["/postpress/casemaker1.webp"]
+    images: ["/machine-mainimage.webp", "/machine-mainimage2.webp"]
   },
   {
     referenceId: "CM-002",
@@ -1253,7 +1253,7 @@ export const machines = [
     condition: "Good",
     location: "Italy",
     availability: "Immediate",
-    images: ["/postpress/casemaker2.webp"]
+    images: ["/machine-mainimage.webp", "/machine-mainimage2.webp"]
   },
   {
     referenceId: "CO-001",
@@ -1269,7 +1269,7 @@ export const machines = [
     condition: "Very Good",
     location: "Germany",
     availability: "Immediate",
-    images: ["/postpress/collator1.webp"]
+   images: ["/machine-mainimage.webp", "/machine-mainimage2.webp"]
   },
   {
     referenceId: "CO-002",
@@ -1285,6 +1285,6 @@ export const machines = [
     condition: "Good",
     location: "Sweden",
     availability: "Immediate",
-    images: ["/postpress/collator2.webp"]
+    images: ["/machine-mainimage.webp", "/machine-mainimage2.webp"]
   }
 ];
