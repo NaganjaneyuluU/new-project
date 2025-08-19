@@ -1,17 +1,20 @@
-<div class="p-6 bg-brand-white">
+<div class=" bg-brand-white">
   <div class="w-[85%] mx-auto">
-  <div class=" flex justify-between mb-4">
-    <h2 class="text-2xl font-bold mb-4">{{selectedMachine.name}}</h2>
-    <div class="flex items-center">
-      <a routerLink="/machines/5-colors" class="text-red-600 hover:underline flex items-center cursor-pointer">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor" class="cursor-pointer size-4">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-        </svg>
-        <p class="p-1 font-medium"> Back to 5-Colors</p>
-      </a>
+    <div class=" flex justify-between mb-4">
+      <h2 class="text-4xl font-extrabold mb-8 mt-8">{{selectedMachine.name}}</h2>
+      <div class="flex items-center">
+        <a routerLink="/machines/5-colors" class="text-red-600 hover:underline flex items-center cursor-pointer">
+
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-5 mr-1 cursor-pointer">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+          </svg>
+
+          <p class="p-1 font-medium"> Back to 5-Colors</p>
+        </a>
+      </div>
     </div>
-  </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
       <div>
@@ -25,58 +28,59 @@
       </div>
 
       <div class="bg-white rounded-lg shadow-md p-6">
-        <h2 class="text-xl font-bold mb-4 text-brand-card-heading">Details</h2>
+        <h2 class="text-3xl font-bold mb-4 text-brand-card-heading">Details</h2>
 
-      <div class="grid grid-cols-2 py-2 text-brand-card-label">
-        <span class="font-semibold ">Reference ID</span>
-        <span>{{selectedMachine.referenceId}}</span>
-      </div>
-      <div class="grid grid-cols-2 py-2 text-brand-card-label">
-        <span class="font-semibold ">Category</span>
-        <span>{{selectedMachine.category}}</span>
-      </div>
+        <div class="grid grid-cols-2 pt-2 text-brand-card-label">
+          <span class="font-semibold ">Reference ID</span>
+          <span>{{selectedMachine.referenceId}}</span>
+        </div>
+        <div class="grid grid-cols-2 pt-2 text-brand-card-label">
+          <span class="font-semibold ">Category</span>
+          <span>{{selectedMachine.category}}</span>
+        </div>
+        <div class="border-t border-[#F0F0F0] my-4"></div>
 
-      <div class="grid grid-cols-2 py-2 text-brand-card-label">
-        <span class="font-semibold ">Manufacturer</span>
-        <span>{{selectedMachine.manufacturer}}</span>
-      </div>
-      <div class="grid grid-cols-2 py-2 text-brand-card-label">
-        <span class="font-semibold ">Model</span>
-        <span>{{selectedMachine.model}}</span>
-      </div>
-      <div class="grid grid-cols-2 py-2 text-brand-card-label">
-        <span class="font-semibold ">Year</span>
-        <span>{{selectedMachine.year}}</span>
-      </div>
-      <div class="grid grid-cols-2 py-2 text-brand-card-label">
-        <span class="font-semibold ">Color</span>
-        <span>5</span>
-      </div>
-
-      <div class="grid grid-cols-2 py-2 text-brand-card-label">
-        <span class="font-semibold ">Impression</span>
-        <span>{{selectedMachine.impression}}</span>
-      </div>
-      <div class="grid grid-cols-2 py-2 text-brand-card-label">
-        <span class="font-semibold ">Max. Size</span>
-        <span>{{selectedMachine.maxSize}}</span>
-      </div>
-      <div class="grid grid-cols-2 py-2 text-brand-card-label">
-        <span class="font-semibold ">Condition</span>
-        <span>{{selectedMachine.condition}}</span>
-      </div>
-      <div class="grid grid-cols-2 py-2 text-brand-card-label">
-        <span class="font-semibold ">Location</span>
-        <span>{{selectedMachine.location}}</span>
-      </div>
-      <div class="grid grid-cols-2 py-2 text-brand-card-label">
-        <span class="font-semibold ">Availability</span>
-        <span>{{selectedMachine.availability}}</span>
-      </div>
-      <div class="flex p-6 items-center justify-between">
-        <button class="mt-6 bg-red-700 hover:bg-red-800 text-white px-5 py-2 rounded-lg shadow-md">
-          Inquiry
-        </button>
+        <div class="grid grid-cols-2 pt-2 text-brand-card-label">
+          <span class="font-semibold ">Manufacturer</span>
+          <span>{{selectedMachine.manufacturer}}</span>
+        </div>
+        <div class="grid grid-cols-2 pt-2 text-brand-card-label">
+          <span class="font-semibold ">Model</span>
+          <span>{{selectedMachine.model}}</span>
+        </div>
+        <div class="grid grid-cols-2 pt-2 text-brand-card-label">
+          <span class="font-semibold ">Year</span>
+          <span>{{selectedMachine.year}}</span>
+        </div>
+        <div class="grid grid-cols-2 pt-2 text-brand-card-label">
+          <span class="font-semibold ">Color</span>
+          <span>5</span>
+        </div>
+        <div class="border-t border-[#F0F0F0] my-4"></div>
+        <div class="grid grid-cols-2 pt-2 text-brand-card-label">
+          <span class="font-semibold ">Impression</span>
+          <span>{{selectedMachine.impression}}</span>
+        </div>
+        <div class="grid grid-cols-2 pt-2 text-brand-card-label">
+          <span class="font-semibold ">Max. Size</span>
+          <span>{{selectedMachine.maxSize}}</span>
+        </div>
+        <div class="grid grid-cols-2 pt-2 text-brand-card-label">
+          <span class="font-semibold ">Condition</span>
+          <span>{{selectedMachine.condition}}</span>
+        </div>
+        <div class="grid grid-cols-2 pt-2 text-brand-card-label">
+          <span class="font-semibold ">Location</span>
+          <span>{{selectedMachine.location}}</span>
+        </div>
+        <div class="grid grid-cols-2 pt-2 text-brand-card-label">
+          <span class="font-semibold ">Availability</span>
+          <span>{{selectedMachine.availability}}</span>
+        </div>
+        <div class="flex p-6 items-center justify-between">
+          <button class="mt-6 bg-red-700 hover:bg-red-800 text-white px-5 py-2 rounded-lg shadow-md">
+            Inquiry
+          </button>
 
           <div class="flex space-x-4 mt-4 text-gray-500">
             <a href='https://www.facebook.com/pplionmachinery/' class="flex items-center gap-1 cursor-pointer ">
@@ -119,7 +123,7 @@
       </div>
 
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12  mt-12">
       <div class="bg-brand-description-card-background shadow-md rounded-lg p-6 h-[fit-content] ">
         <h2 class="text-xl font-bold mb-4">Description</h2>
         <ul class="list-disc list-inside text-gray-700 space-y-1">
@@ -132,7 +136,7 @@
       </div>
       <div class="bg-brand-form-background shadow-md rounded-lg p-6">
         <div class="flex items-center justify-between mb-4">
-          <h2 class="text-xl font-bold">Any Questions?</h2>
+          <h2 class="text-3xl font-bold">Any Questions?</h2>
           <span class="text-gray-400 cursor-pointer" title="Fill the form to ask questions">ℹ️</span>
         </div>
 
@@ -154,27 +158,27 @@
         </div>
 
         <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-          <div *ngIf="step==1" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div *ngIf="step==1" class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <label class="block text-sm font-medium text-gray-700">Name*</label>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Name*</label>
               <input type="text" name="name" [(ngModel)]="contactFormData.name" required placeholder="Enter your Name"
                 class="w-full placeholder:text-brand-gray shadow bg-brand-inputfield rounded p-3 focus:outline-none" />
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-700">E-Mail*</label>
+              <label class="block text-sm font-medium text-gray-700 mb-1">E-Mail*</label>
               <input type="email" name="email" [(ngModel)]="contactFormData.email" required
                 placeholder="Enter your E-Mail"
                 class="w-full placeholder:text-brand-gray shadow bg-brand-inputfield rounded p-3 focus:outline-none " />
 
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-700">Phone Number*</label>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number*</label>
               <input type="text" name="phone" [(ngModel)]="contactFormData.phone" required
                 placeholder="Enter your Phone Number"
                 class="w-full placeholder:text-brand-gray shadow bg-brand-inputfield rounded p-3 focus:outline-none " />
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-700">Company*</label>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Company*</label>
               <input type="text" name="company" [(ngModel)]="contactFormData.company" required
                 placeholder="Enter your Company"
                 class="w-full placeholder:text-brand-gray shadow bg-brand-inputfield rounded p-3 focus:outline-none " />
@@ -227,41 +231,51 @@
           </div>
 
           <button *ngIf="step==1" type="submit"
-            class="mt-6 bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-md shadow-md cursor-pointer" (click)="nextStep()">
+            class="mt-6 bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-md shadow-md cursor-pointer"
+            (click)="nextStep()">
             Next
           </button>
         </form>
       </div>
     </div>
-    <div class="relative w-full overflow-hidden p-6">
+    <div class="relative w-full overflow-hidden  mt-20">
 
-      <h2 class="text-2xl font-bold mb-4">Other Machines in category {{category}}</h2>
+      <h2 class="text-4xl font-bold mb-8">Other Machines in category {{category}}</h2>
+
 
       <div class="flex transition-transform duration-500 ease-in-out"
         [style.transform]="'translateX(-' + currentIndex * (100 / itemsPerPage) + '%)'">
 
-        <div *ngFor="let machine of MachinesOfSelectedCategory" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex-shrink-0 px-2">
+        <div *ngFor="let machine of MachinesOfSelectedCategory"
+          class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex-shrink-0 px-2">
           <div class="bg-white shadow-md rounded-lg overflow-hidden">
             <img [src]="machine.images[0]" alt="machine" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="font-semibold text-lg">{{ machine.name }}</h3>
-              <p><strong>Year:</strong> {{ machine.year }}</p>
-              <p><strong>Size:</strong> {{ machine.maxSize }}</p>
+            <div class="py-8 px-6">
+              <div class="mb-4">
+                <h3 class="font-semibold text-lg ">{{ machine.name }}</h3>
+              </div>
+              <p class="establishes-year"><span class="font-semibold">Year:</span> {{ machine.year }}</p>
+              <p class="establishes-year"><span class="font-semibold">Size:</span> {{ machine.maxSize }}</p>
+              <div class="mt-8">
+                <a href="" class="card-detailsbutton">Details</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
+
+
       <button (click)="prevSlide()"
-        class="absolute top-1/2 -left-2 transform -translate-y-1/2 bg-black text-white p-2  text-center rounded cursor-pointer">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+        class="absolute top-1/2 -left-0 transform -translate-y-1/2 bg-black text-white  py-2  text-center  cursor-pointer rounded-[5px] ">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
           <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
         </svg>
       </button>
 
       <button (click)="nextSlide()"
-        class="absolute top-1/2 -right-2 transform -translate-y-1/2 bg-black text-white p-2 rounded cursor-pointer">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+        class="absolute top-1/2 -right-0 transform -translate-y-1/2 bg-black text-white  py-2  cursor-pointer rounded-[5px] ">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
           <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
         </svg>
       </button>

@@ -43,10 +43,12 @@
       </a>
     </div>
     <div class="alignment-carddetails">
-      <a [routerLink]="['/machine-details']" [queryParams]="{ id: machine.referenceId }" class="productlink-name">{{ machine.name }}</a>
+      <a [routerLink]="['/machine-details']" [queryParams]="{ id: machine.referenceId }" class="productlink-name">{{
+        machine.name }}</a>
       <p class="establishes-year"><span class="font-semibold">Year:</span> {{ machine.year }}</p>
       <p class="establishes-year"><span class="font-semibold">Size:</span> {{ machine.maxSize }}</p>
-<a [routerLink]="['/machine-details']" [queryParams]="{ id: machine.referenceId }" class="card-detailsbutton">Details</a>
+      <a [routerLink]="['/machine-details']" [queryParams]="{ id: machine.referenceId }"
+        class="card-detailsbutton">Details</a>
     </div>
   </div>
 </div>

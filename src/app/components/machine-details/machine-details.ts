@@ -20,17 +20,17 @@ export class MachineDetails implements OnInit {
     email: '',
     phone: '',
     company: '',
-     userType: '',
+    userType: '',
     message: '',
     privacy: false
   };
   step: number = 1;
   selectedImage = this.images[0];
-  machines=machines;
-  selectedMachine:any;
-  category:any;
-  MachinesOfSelectedCategory:any[]=[];
-  constructor(private route: ActivatedRoute) {}
+  machines = machines;
+  selectedMachine: any;
+  category: any;
+  MachinesOfSelectedCategory: any[] = [];
+  constructor(private route: ActivatedRoute) { }
   onSubmit(form: NgForm) {
     if (form.valid) {
       form.resetForm();
@@ -39,10 +39,10 @@ export class MachineDetails implements OnInit {
     }
   }
   nextStep() {
-    this.step=2;
+    this.step = 2;
   }
-  previousStep(){
-    this.step=1;
+  previousStep() {
+    this.step = 1;
   }
   currentIndex = 0;
   itemsPerPage = 4;
@@ -50,13 +50,13 @@ export class MachineDetails implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-    const id = params['id'];
-       if (id) {
+      const id = params['id'];
+      if (id) {
         this.selectedMachine = machines.find(m => m.referenceId === id);
         console.log(this.selectedMachine)
       }
     });
-    this.category=this.selectedMachine.category;
+    this.category = this.selectedMachine.category;
     this.MachinesOfSelectedCategory = machines.filter(m => m.category === this.category);
     this.updateItemsPerPage();
     this.startAutoSlide();
@@ -78,20 +78,25 @@ export class MachineDetails implements OnInit {
 
   /** Navigation */
   prevSlide() {
-    if (this.currentIndex > 0) this.currentIndex--;
-    else this.currentIndex = this.machines.length - this.itemsPerPage;
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
+    } else {
+      this.currentIndex = Math.ceil(this.machines.length / this.itemsPerPage) - 1; // Go to the last set
+    }
   }
 
   nextSlide() {
-    if (this.currentIndex < this.machines.length - this.itemsPerPage) this.currentIndex++;
-    else this.currentIndex = 0;
+    if (this.currentIndex < Math.ceil(this.machines.length / this.itemsPerPage) - 1) {
+      this.currentIndex++;
+    } else {
+      this.currentIndex = 0;
+    }
   }
 
-  /** Auto slide */
   startAutoSlide() {
     this.interval = setInterval(() => {
       this.nextSlide();
-    }, 5000); // 5 seconds
+    }, 4000); 
   }
 
 }
