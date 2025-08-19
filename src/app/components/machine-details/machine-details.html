@@ -243,7 +243,7 @@
       <h2 class="text-4xl font-bold mb-8">Other Machines in category {{category}}</h2>
 
 
-      <div class="flex transition-transform duration-500 ease-in-out"
+      <div class="flex transition-transform duration-500 ease-in-out mb-10"
         [style.transform]="'translateX(-' + currentIndex * (100 / itemsPerPage) + '%)'">
 
         <div *ngFor="let machine of MachinesOfSelectedCategory"
@@ -252,7 +252,7 @@
             <img [src]="machine.images[0]" alt="machine" class="w-full h-48 object-cover">
             <div class="py-8 px-6">
               <div class="mb-4">
-                <h3 class="font-semibold text-lg ">{{ machine.name }}</h3>
+                <h3 class="font-semibold text-lg whitespace-nowrap">{{ machine.name }}</h3>
               </div>
               <p class="establishes-year"><span class="font-semibold">Year:</span> {{ machine.year }}</p>
               <p class="establishes-year"><span class="font-semibold">Size:</span> {{ machine.maxSize }}</p>
