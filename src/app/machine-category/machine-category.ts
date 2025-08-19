@@ -3,11 +3,10 @@ import { MACHINES } from '../../dataset/cards-data';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-abc',
+  selector: 'app-machine-category',
   imports: [CommonModule],
-  templateUrl: './abc.html',
-  styleUrl: './abc.css'
+  templateUrl: './machine-category.html',
 })
-export class Abc {
+export class MachineCategory {
 machines=MACHINES
 }
