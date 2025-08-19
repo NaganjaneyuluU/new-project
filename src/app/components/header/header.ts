@@ -46,7 +46,7 @@ export class Header implements OnInit {
     return country ? country.img : '';
   }
   menuItems = [
-    { label: 'Home', route: '/index' },
+    { label: 'Home', route: '/home' },
     {
       label: 'Printing Machines',
       route: '/printing-machines',

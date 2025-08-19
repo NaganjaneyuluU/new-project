@@ -10,12 +10,14 @@ import { MachineCategory } from './machine-category/machine-category';
 
 
 export const routes: Routes = [
+     { path: '', redirectTo: '/home', pathMatch: 'full' },
      { path: 'footer', component: Footer },
-     { path: 'index', component: Index },
+     { path: 'home', component: Index },
      { path: 'header', component: Header },
      { path: 'contactus', component: ContactUs },
      { path: 'imprint', component: Imprint },
      { path: 'our-services', component: OurServices },
      { path: 'machine-details', component: MachineDetails },
-     {path:'machine-category',component:MachineCategory}
+     { path:'machine-category',component:MachineCategory },
+      { path: '**', redirectTo: '/home' }
 ];
