@@ -148,9 +148,9 @@
                     and don’t miss any machine offers!
                 </li>
                 <li>
-                    <a href="" class="footer-signupbutton">
+                    <button  class="footer-signupbutton cursor-pointer" (click)="openModal()" >
                         Sign Up
-                    </a>
+                    </button>
                 </li>
 
             </ul>
@@ -163,3 +163,92 @@
         </div>
     </div>
 </footer>
+
+
+<div *ngIf="isModalOpen" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div class="bg-white p-6 rounded-lg w-auto shadow-lg">
+        <button (click)="closeModal()" class="absolute top-2 right-2 text-gray-600">&times;</button>
+        <div>
+            <h2 class="text-gray-800 text-4xl font-extrabold leading-tight">
+                Sign Up for our Newsletter
+            </h2>
+            <p class="text-xs text-gray-600 font-normal mb-3 mt-5">
+                Please fill in the form below.
+            </p>
+
+            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="space-y-4">
+                <div class="flex">
+                    <div>
+                        <label class="block  mb-1">Name*</label>
+                        <input type="text" name="name" [(ngModel)]="contactFormData.name" required
+                            placeholder="Enter your Name"
+                            class="w-full placeholder:text-brand-gray shadow bg-brand-inputfield rounded p-3 focus:outline-none" />
+                    </div>
+                    <div>
+                        <label class="block  mb-1">E-Mail*</label>
+                        <input type="email" name="email" [(ngModel)]="contactFormData.email" required
+                            placeholder="Enter your E-Mail"
+                            class="w-full placeholder:text-brand-gray shadow bg-brand-inputfield rounded p-3 focus:outline-none " />
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div>
+                        <label class="block  mb-1">Phone Number*</label>
+                        <input type="text" name="phone" [(ngModel)]="contactFormData.phone" required
+                            placeholder="Enter your Phone Number"
+                            class="w-full placeholder:text-brand-gray shadow bg-brand-inputfield rounded p-3 focus:outline-none " />
+                    </div>
+
+                    <div>
+                        <label class="block mb-1">Company*</label>
+                        <input type="text" name="company" [(ngModel)]="contactFormData.company" required
+                            placeholder="Enter your Company"
+                            class="w-full placeholder:text-brand-gray shadow bg-brand-inputfield rounded p-3 focus:outline-none " />
+                    </div>
+                </div>
+
+
+                <div>
+                    <p class="mb-2">Are you a Dealer or Enduser?*</p>
+                    <div class="flex items-center gap-8"><label>
+                            <div class="flex items-center">
+                                <input type="radio" name="userType" value="dealer"
+                                    [(ngModel)]="contactFormData.userType" required />
+                                <p class="pl-2">Dealer</p>
+                            </div>
+                        </label>
+                        <label>
+                            <div class="flex items-center">
+                                <input type="radio" name="userType" value="endUser"
+                                    [(ngModel)]="contactFormData.userType" required />
+                                <p class="pl-2">End User</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="flex items-center">
+                    <input type="checkbox" name="privacy" [(ngModel)]="contactFormData.privacy" required class="mr-2" />
+                    <label class="font-medium text-brand-gray-hover">I have taken note of the <a
+                            href="/footer-components/imprint" class="underline">privacy
+                            policy</a>.</label>
+                </div>
+
+                <button type="submit" [disabled]="!contactForm.valid"
+                    class="bg-red-700 text-white py-2 rounded-lg hover:bg-red-800 transition w-40">
+
+                    <div class="flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                            viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                            <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                        </svg>
+                        <p class="p-1">Submit</p>
+                    </div>
+                </button>
+            </form>
+            <div class="mt-4 mb-4">
+                If you want to submit your machine, click here.
+            </div>
+        </div>
+    </div>
+</div>
