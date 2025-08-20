@@ -166,8 +166,14 @@
 
 
 <div *ngIf="isModalOpen" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-    <div class="bg-white p-6 rounded-lg w-auto shadow-lg">
-        <button (click)="closeModal()" class="absolute top-2 right-2 text-gray-600">&times;</button>
+    <div class="bg-white p-12 rounded-lg w-[50%] shadow-lg relative">
+        <button (click)="closeModal()" class="absolute top-4 right-4 cursor-pointer text-gray-600">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                class="size-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+        
+        </button>
         <div>
             <h2 class="text-gray-800 text-4xl font-extrabold leading-tight">
                 Sign Up for our Newsletter
@@ -177,14 +183,14 @@
             </p>
 
             <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="space-y-4">
-                <div class="flex">
-                    <div>
+                <div class="flex gap-5">
+                    <div class="w-[100%]">
                         <label class="block  mb-1">Name*</label>
                         <input type="text" name="name" [(ngModel)]="contactFormData.name" required
                             placeholder="Enter your Name"
                             class="w-full placeholder:text-brand-gray shadow bg-brand-inputfield rounded p-3 focus:outline-none" />
                     </div>
-                    <div>
+                    <div class="w-[100%]">
                         <label class="block  mb-1">E-Mail*</label>
                         <input type="email" name="email" [(ngModel)]="contactFormData.email" required
                             placeholder="Enter your E-Mail"
@@ -192,15 +198,15 @@
                     </div>
                 </div>
 
-                <div class="flex">
-                    <div>
+                <div class="flex gap-5">
+                    <div class="w-[100%]">
                         <label class="block  mb-1">Phone Number*</label>
                         <input type="text" name="phone" [(ngModel)]="contactFormData.phone" required
                             placeholder="Enter your Phone Number"
                             class="w-full placeholder:text-brand-gray shadow bg-brand-inputfield rounded p-3 focus:outline-none " />
                     </div>
 
-                    <div>
+                    <div class="w-[100%]">
                         <label class="block mb-1">Company*</label>
                         <input type="text" name="company" [(ngModel)]="contactFormData.company" required
                             placeholder="Enter your Company"
@@ -236,7 +242,7 @@
                 </div>
 
                 <button type="submit" [disabled]="!contactForm.valid"
-                    class="bg-red-700 text-white py-2 rounded-lg hover:bg-red-800 transition w-40">
+                    class="bg-red-700 text-white py-2 px-6 rounded-lg hover:bg-red-800 transition  cursor-pointer">
 
                     <div class="flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
                             viewBox="0 -960 960 960" width="24px" fill="currentColor">
