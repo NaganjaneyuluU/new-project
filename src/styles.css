@@ -32,7 +32,7 @@
 }
 
 .footer-buttons {
-    @apply text-[#BBBEC7BA]
+    @apply text-[#BBBEC7BA] cursor-pointer
 }
 
 .footer-signuptext {
